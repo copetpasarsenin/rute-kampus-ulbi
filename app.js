@@ -1,4 +1,4 @@
-import { onClick, runAfterDOM, setInnerText } from "https://raw.githubusercontent.com/crootjs/lib/main/element.js";
+import { onClick, runAfterDOM, setInnerText } from "./vendor/crootjs/element.js";
 
 const DATA_URL = "data/714240047.geojson";
 const JOIN_RADIUS_METERS = 20;
