@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Peta dan rute pejalan kaki Kampus ULBI.">
+  <title>Rute Kampus ULBI</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ2d7E1HnR7P3NR1K0C9HPA8W+8q+0=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/peta" aria-label="Buka peta rute kampus">ULBI Route</a>
+    <nav aria-label="Navigasi utama">
+      <a href="#/peta" data-view-link="peta">Peta</a>
+      <a href="#/tentang" data-view-link="tentang">Tentang</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="peta" class="view" data-view="peta">
+      <aside class="panel" aria-labelledby="route-heading">
+        <p class="eyebrow">Navigasi kampus</p>
+        <h1 id="route-heading">Cari rute berjalan</h1>
+        <p class="description">Pilih titik berangkat dan titik tujuan. Rute memakai polyline jalur kampus dari data survei.</p>
+
+        <label for="origin">Titik berangkat</label>
+        <select id="origin" aria-label="Titik berangkat"></select>
+
+        <label for="destination">Titik tujuan</label>
+        <select id="destination" aria-label="Titik tujuan"></select>
+
+        <div class="actions">
+          <button id="route-button" type="button">Tampilkan rute</button>
+          <button id="reset-button" class="secondary" type="button">Reset</button>
+        </div>
+        <p id="route-summary" class="summary" role="status">Memuat data peta…</p>
+        <p class="legend"><span class="line-swatch"></span> Jalur pejalan kaki <span class="route-swatch"></span> Rute terpilih</p>
+      </aside>
+      <div id="map" aria-label="Peta kampus ULBI dan jalur rute"></div>
+    </section>
+
+    <section id="tentang" class="view about" data-view="tentang" hidden>
+      <div>
+        <p class="eyebrow">Tentang aplikasi</p>
+        <h1>Rute Kampus ULBI</h1>
+        <p>Aplikasi statis untuk GitHub Pages. Data bangunan dan jalur berasal dari GeoJSON kampus.</p>
+        <p>Rute dihitung di browser dengan graf polyline jalan. Garis penghubung pendek hanya menghubungkan titik bangunan ke jalur terdekat.</p>
+        <a class="back-link" href="#/peta">Kembali ke peta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Data kampus: OpenStreetMap contributors, ODbL. Aplikasi: CrootJS + Leaflet.</footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
