@@ -10,6 +10,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 body {
   min-width: 320px;
@@ -43,12 +44,12 @@ h1 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.1; letter
 .description { margin: 15px 0 27px; color: var(--muted); font-size: .94rem; }
 label { display: block; margin: 18px 0 7px; font-size: .86rem; font-weight: 750; }
 select, button { width: 100%; min-height: 46px; border-radius: 9px; font: inherit; }
-select { padding: 0 12px; color: var(--ink); background: #fff; border: 1px solid #bdc9d0; }
+select { padding: 0 28px 0 12px; color: var(--ink); background: #fff; border: 1px solid #bdc9d0; text-overflow: ellipsis; }
 .actions { display: grid; grid-template-columns: 1fr auto; gap: 9px; margin-top: 24px; }
 button { padding: 0 15px; color: #fff; font-weight: 800; cursor: pointer; background: var(--accent); border: 1px solid var(--accent); }
 button:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
 button.secondary { width: auto; color: var(--accent-dark); background: #fff; border-color: #b9c7ca; }
-.summary { min-height: 48px; margin: 22px 0 0; padding: 13px; color: var(--accent-dark); font-size: .9rem; font-weight: 650; background: #edf7f5; border-left: 3px solid var(--accent); }
+.summary { min-height: 48px; margin: 22px 0 0; padding: 13px; color: var(--accent-dark); font-size: .9rem; font-weight: 650; background: #edf7f5; border-left: 3px solid var(--accent); overflow-wrap: anywhere; }
 .legend { margin-top: 24px; color: var(--muted); font-size: .79rem; }
 .line-swatch, .route-swatch { display: inline-block; width: 17px; height: 3px; margin: 0 4px 3px 9px; vertical-align: middle; background: #556a75; }
 .line-swatch { margin-left: 0; }
@@ -59,7 +60,7 @@ button.secondary { width: auto; color: var(--accent-dark); background: #fff; bor
 .about > div { width: min(620px, 100%); padding: clamp(28px, 5vw, 52px); background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
 .about p:not(.eyebrow) { color: var(--muted); }
 .back-link { display: inline-block; margin-top: 12px; color: var(--accent); font-weight: 800; }
-footer { height: 40px; display: grid; place-items: center; padding: 0 15px; color: var(--muted); font-size: .71rem; text-align: center; background: var(--surface); border-top: 1px solid var(--border); }
+footer { min-height: 40px; display: grid; place-items: center; padding: 8px 15px; color: var(--muted); font-size: .71rem; text-align: center; background: var(--surface); border-top: 1px solid var(--border); }
 
 .leaflet-popup-content-wrapper { border-radius: 10px; }
 .popup-title { margin: 0; font-weight: 800; }
@@ -72,5 +73,4 @@ footer { height: 40px; display: grid; place-items: center; padding: 0 15px; colo
   .description { margin-bottom: 18px; }
   label { margin-top: 13px; }
   #map { min-height: 55vh; flex: 1; }
-  footer { height: 40px; }
 }
